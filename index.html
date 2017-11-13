@@ -1,0 +1,104 @@
+<!Doctype HTML>
+<html>
+    <head>
+        <title>Kanban Board</title>
+        <link rel="icon" type="image/png" href="img/icon.png" />
+
+        
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/scripts.js"></script>
+
+    </head>
+    <body>
+        
+        <!-- Header Bar of Kanban -->
+        <nav>
+            <div class="nav-wrapper">
+            <a class="brand-logo center">Tech Team</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="modal-trigger" href="#modal1"><i class="fa fa-plus fa-fw" aria-hidden="true"></i></a></li>
+            </ul>
+            </div>
+        </nav>
+        
+        <!-- Kanban Headers -->
+        <div class="myrow">
+            <center>
+            <div class="mycolumn-header" style="background-color:#ecf0f1;">
+                <h4>Todo</h4>
+            </div>
+            <div class="mycolumn-header" style="background-color:#cdd3d7;">
+                <h4>In-Progress</h4>
+            </div>
+            <div class="mycolumn-header" style="background-color:#ecf0f1;">
+                <h4>Done</h4>
+            </div>
+            </center>
+        </div>
+        
+        <!-- Kanban Columns -->
+        <div class="myrow">
+            <ol id="todo" class="mycolumn" style="background-color:#ecf0f1;"></ol>
+            <ol id="in-progress" class="mycolumn" style="background-color:#cdd3d7;"></ol>
+            <ol id="done" class="mycolumn" style="background-color:#ecf0f1;"></ol>
+        </div>
+        
+        <!-- Modal Create -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Add an Task</h4>
+
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="task_title" type="text" class="validate">
+                                <label for="task_title">Title</label>
+                            </div>
+                        </div>       
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="task_description" type="text" class="materialize-textarea validate"></textarea>
+                                <label for="task_description">Description</label>
+                            </div>
+                        </div>             
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class=" modal-action modal-close teal white-text darken-1 btn-flat" id="modal-create">Create</a>
+                <a class=" modal-action modal-close btn-flat" id="modal-cancel">Cancel</a>
+            </div>
+        </div>
+        
+        <!-- Modal Delete -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <h4>Delete Task</h4>
+                <p>Are you sure you'd like to delete this task? Once you do, there is no way to recover it.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close red lighten-2 white-text btn-flat" id="modal-delete">Delete</a>
+                <a href="#!" class="modal-action modal-close btn-flat">Cancel</a>
+            </div>
+        </div>
+        
+        <!-- Modal View -->
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <h4 id="view_title"></h4>
+                <p id="view_description"></p>
+            </div>
+        </div>
+    </body>
+</html>
