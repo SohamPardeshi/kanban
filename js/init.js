@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyAuR7UxyX68NuaXwyfZS2qdz6ajchsThlw",
-    authDomain: "kanbanboard-cfc78.firebaseapp.com",
-    databaseURL: "https://kanbanboard-cfc78.firebaseio.com",
-    projectId: "kanbanboard-cfc78",
-    storageBucket: "",
-    messagingSenderId: "915373767743"
+    apiKey: "AIzaSyARhDpqQqd3gJXy6P63rOvpK2eAaScM_Kg",
+    authDomain: "mykanban-45451.firebaseapp.com",
+    databaseURL: "https://mykanban-45451.firebaseio.com",
+    projectId: "mykanban-45451",
+    storageBucket: "mykanban-45451.appspot.com",
+    messagingSenderId: "288865808133"
 };
 firebase.initializeApp(config);
 
